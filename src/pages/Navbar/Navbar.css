@@ -59,4 +59,22 @@
 }
 .Login {
   color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0.22;
+    color: white;
+    font-weight: 700;
+}
+.Account {
+    color: white;
+    font-weight: 700;
+}
+.More {
+    color: white;
+    font-weight: 700;
+}
+.Login {
+    color: white;
+    font-weight: 700;
 }

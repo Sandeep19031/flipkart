@@ -1,0 +1,13 @@
+
+.navcard {
+    display: flex;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    justify-content: center;
+}
+.card-img {
+    width: 50%;
+}
+.Card > p {
+    margin: 0px;
+    font-weight: 500;
+}
