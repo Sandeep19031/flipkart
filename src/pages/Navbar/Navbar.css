@@ -1,0 +1,62 @@
+
+.navbar {
+    display: flex;
+    flex: 1;
+    background-color: blue;
+    justify-content: center;
+}
+
+.navbar-left {
+    flex: 0.1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-mid {
+    flex: 0.3;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navbar-right {
+    flex: 0.15;
+}
+.searchDiv {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 60%;
+}
+.searchDiv > input {
+    border-width: 0px;
+}
+.searchDiv > input:focus {
+    outline-width: 0px;
+}
+
+.right {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0.22;
+    color: white;
+}
+.Account {
+    color: white;
+}
+.More {
+    color: white;
+}
+.Login {
+    color: white;
+}
