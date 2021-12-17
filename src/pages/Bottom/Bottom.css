@@ -1,0 +1,116 @@
+.bottom {
+  background-color: #172337;
+}
+.upper {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 25px 0 40px 0;
+}
+.about {
+  flex: 0.12;
+  justify-content: start;
+  align-items: flex-start;
+}
+.help {
+  flex: 0.12;
+  justify-content: start;
+  align-items: flex-start;
+}
+.policy {
+  flex: 0.12;
+  justify-content: start;
+  align-items: flex-start;
+}
+.social {
+  flex: 0.12;
+  justify-content: start;
+  align-items: flex-start;
+}
+.mail-us {
+  flex: 0.2;
+  justify-content: start;
+  align-items: flex-start;
+}
+.mail {
+  border-left: 1px solid #878787;
+  padding-left: 20px;
+}
+.address {
+  flex: 0.2;
+  justify-content: start;
+  align-items: flex-start;
+}
+
+.title {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  padding-bottom: 4px;
+  color: #878787;
+  text-align: left;
+}
+.elements {
+  font-size: 15px;
+  padding-bottom: 8px;
+  margin: 0px;
+  color: rgb(252, 237, 237);
+  text-align: left;
+}
+.addressElm {
+  font-size: 15px;
+  padding-bottom: 2px;
+  margin: 0px;
+  color: rgb(252, 237, 237);
+  text-align: left;
+}
+
+hr {
+  border: 1px solid #878787;
+}
+.lower {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  padding: 25px 0 25px 0;
+}
+.sell {
+  flex: 0.11;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.advertise {
+  flex: 0.1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.gift-cards {
+  flex: 0.1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.help-center {
+  flex: 0.1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.timeline {
+  flex: 0.15;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.payment {
+  flex: 0.25;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.textStyle {
+  padding-left: 10px;
+  font-size: 18px;
+  color: rgb(252, 237, 237);
+}
