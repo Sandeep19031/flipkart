@@ -15,22 +15,52 @@
     background-color: #2874f0;;
     color: white;
     font-weight: 400;
-    border-radius: 2px;
-    width: fit-content;
-    height: fit-content;
+    border-radius: 2px;    
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: max-content;
+    padding: 10px 10px;
 }
-.button > p {
+
+
+.productsCard-left{
+    display:  flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .productsCard-left-up {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items:  center;
 }
 .productsCard-left-up > p{
     font-weight: 500;
     font-size: 24px;
     text-align: center;
+    width: 60%;
 }
+
+.homeProductCard-description-productName{
+    font-weight: 500;
+    padding: 0px 30px;
+}
+.homeProductCard-description-productPrice{
+    color: green;
+}
+.homeProductCard-description-productBrand{
+    color: grey;
+}
+
+.productsCard-right{
+    display: flex;
+}
+
+.homeProductCard-img > img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+  }
+
+  .homeProductCard{
+      flex: 0.2;
+  }
