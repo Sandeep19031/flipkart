@@ -5,6 +5,7 @@ import NavCard from '../NavCard/NavCard'
 import './Home.css'
 
 import CartLogo1 from './cart-logo.png';
+import AllProducts from '../AllProducts/AllProducts'
 
 
 
@@ -85,14 +86,15 @@ function Home() {
             <Navbar />
             <NavCard />
             <div className="body">
-                <ProductsCard 
+                {/* <ProductsCard 
                 title="Top Offers on Mobiles"
                 list={HomeProductCard_Mobiles}
                 />
                 <ProductsCard 
                 title="Today's Fashion Deals"
                 list={HomeProductCard_Fashions}
-                />
+                /> */}
+                <AllProducts />
             </div>
             
             <Bottom  />
