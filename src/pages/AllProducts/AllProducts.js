@@ -129,7 +129,7 @@ function AllProducts() {
           </p>
         </div>
         <div>
-          <MobileCards />
+          <MobileCards param={{ updated_price: PriceValue }} />
         </div>
       </div>
     </div>

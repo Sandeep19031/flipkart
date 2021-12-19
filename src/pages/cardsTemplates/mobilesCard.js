@@ -52,13 +52,18 @@ function MobileCard({ data }) {
   );
 }
 
-function MobileCards() {
+function MobileCards(params = { param: {} }) {
+  // console.log(params);
   const [DataList, setDataList] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:9000/mobiles").then((res) => {
-      setDataList(res.data);
-    });
-  }, []);
+    axios
+      .get("http://localhost:9000/mobiles", {
+        params: params.param,
+      })
+      .then((res) => {
+        setDataList(res.data);
+      });
+  }, [params]);
   return (
     <div>
       {DataList.map((data) => (
