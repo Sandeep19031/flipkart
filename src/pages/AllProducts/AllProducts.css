@@ -1,56 +1,55 @@
-
 ul {
-    text-align: start;
-  }
+  text-align: start;
+}
 
-  .allProducts{
-      display: flex;
-  }
-  .result-card-right-box > img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-  }
+.allProducts {
+  display: flex;
+}
+.result-card-right-box > img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
 
-  .result-card{
-      display: flex;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
+.result-card {
+  display: flex;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 
-  .rate-star {
-      background-color: green;
-      width: fit-content;
-      height: fit-content;
-      color: white;
-      border-radius: 3px;
-      padding: 1px;
-  }
-  .rate-block {
-        display: flex;
-  }
-  .result-card-mid-up{
+.rate-star {
+  background-color: green;
+  width: fit-content;
+  height: fit-content;
+  color: white;
+  border-radius: 3px;
+  padding: 1px;
+}
+.rate-block {
+  display: flex;
+}
+/* .result-card-mid-up{
 
-  }
-  .result-card-right-box{
-      display: flex;
-  }
+  } */
+.result-card-right-box {
+  display: flex;
+}
 
-  .filters{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
-  .price {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
-  .brand {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
-  .rating {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
-  .discount {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
+.filters {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.price {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.brand {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.rating {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.discount {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 
-  .result-container{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
+.result-container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}

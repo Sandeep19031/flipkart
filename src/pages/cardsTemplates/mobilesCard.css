@@ -1,0 +1,81 @@
+.mobileCard {
+  display: flex;
+  flex: 1;
+  width: 60%;
+  justify-content: space-around;
+  margin: 8px;
+  background-color: white;
+  border: 1px solid rgb(223, 219, 219);
+}
+.card-image {
+  flex: 0.2;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 15px;
+  background-color: white;
+}
+.card-desc {
+  flex: 0.45;
+  justify-content: start;
+  align-items: flex-start;
+}
+.card-title {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 21px;
+  padding-bottom: 4px;
+  font-weight: 600;
+  color: rgb(27, 26, 26);
+  text-align: left;
+  margin: 0px;
+  padding: 15px 0px 0px 4px;
+}
+.rate-block {
+  padding: 0px;
+  margin: 0px;
+  align-content: left;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 550;
+  color: rgb(128, 126, 126);
+  text-align: left;
+}
+.rate-star {
+  background-color: green;
+  color: white;
+  border-radius: 6px;
+  padding: 3px 7px;
+  font-weight: 600;
+  margin-right: 8px;
+}
+.specsList {
+  list-style-type: circle;
+}
+.listItem {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 17px;
+  text-align: left;
+  line-height: 1.6;
+}
+.card-price {
+  flex: 0.3;
+  justify-content: start;
+  align-items: flex-start;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 26px;
+  text-align: left;
+}
+.logo {
+  margin-left: 20px;
+  height: 26px;
+}
+.original_price {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  color: rgb(128, 126, 126);
+  margin-right: 15px;
+}
+.discount {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  color: rgb(94, 190, 106);
+}
