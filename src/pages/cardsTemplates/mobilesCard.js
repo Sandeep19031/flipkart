@@ -1,6 +1,22 @@
 import React from "react";
 import "./mobilesCard.css";
 // import ListingAll from "../data/mobiles.mjs";
+import axios from "axios";
+
+const getData = async () => {
+  var dataL;
+  await axios
+    .get("http://localhost:9000/mobiles")
+    .then((response) => {
+      const data = response.data;
+      dataL = data;
+      console.log("Data has been Received!!");
+    })
+    .catch(() => {
+      alert("Error!!");
+    });
+  return dataL;
+};
 
 let dataList = [
   {
@@ -157,22 +173,22 @@ let dataList = [
 
 // let dataList = ListingAll();
 
-let data = {
-  title: "Redmi 9 (Sporty Orange, 64 GB)  (4 GB RAM)",
-  link: "https://www.linkpicture.com/q/Redmi-9-Sporty-Orange-64GB.jpeg",
-  original_price: 10760,
-  updated_price: 10090,
-  discount: 6,
-  highlights: [
-    "4 GB RAM | 64 GB ROM",
-    "16.59 cm (6.53 inch) HD+ Display",
-    "13MP + 2MP | 5MP Front Camera",
-    "5000 mAh Battery",
-    "MediaTek Helio G35 Processor",
-  ],
-  warranty:
-    "1 year manufacturer warranty for device and 6 months manufacturer warranty for in-box accessories including batteries from the date of purchase",
-};
+// let data = {
+//   title: "Redmi 9 (Sporty Orange, 64 GB)  (4 GB RAM)",
+//   link: "https://www.linkpicture.com/q/Redmi-9-Sporty-Orange-64GB.jpeg",
+//   original_price: 10760,
+//   updated_price: 10090,
+//   discount: 6,
+//   highlights: [
+//     "4 GB RAM | 64 GB ROM",
+//     "16.59 cm (6.53 inch) HD+ Display",
+//     "13MP + 2MP | 5MP Front Camera",
+//     "5000 mAh Battery",
+//     "MediaTek Helio G35 Processor",
+//   ],
+//   warranty:
+//     "1 year manufacturer warranty for device and 6 months manufacturer warranty for in-box accessories including batteries from the date of purchase",
+// };
 
 function MobileCard({ data }) {
   // console.log(params);
@@ -225,6 +241,9 @@ function MobileCard({ data }) {
 }
 
 function MobileCards() {
+  const dataL = getData();
+  // dataL.resolve().then(() => console.log(2));
+  // console.log("hello");
   return (
     <div>
       {dataList.map((data) => (
