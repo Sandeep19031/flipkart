@@ -32,6 +32,14 @@
   font-weight: 550;
   font-size: 18px;
 }
+.price-slider {
+  padding-bottom: 10px;
+}
+.price-value {
+  border: 1px solid black;
+  background-color: rgb(192, 188, 188);
+  padding: 8px 15px;
+}
 .brand {
   font-family: Roboto, Arial, sans-serif;
   padding-left: 25px;
