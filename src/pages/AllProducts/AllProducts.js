@@ -4,7 +4,10 @@ import MobileCard from "../cardsTemplates/mobilesCard";
 
 function AllProducts() {
   return (
-    <MobileCard />
+    <div>
+      <MobileCard />
+      <MobileCard />
+    </div>
     // <div className="allProducts">
     //   <div className="filters-conatiner">
     //     <div className="filters">
