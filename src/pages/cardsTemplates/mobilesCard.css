@@ -1,9 +1,9 @@
 .mobileCard {
   display: flex;
   flex: 1;
-  width: 60%;
+  width: 100%;
   justify-content: space-around;
-  margin: 8px;
+  margin: 10px 10px 10px 5px;
   background-color: white;
   border: 1px solid rgb(223, 219, 219);
 }
@@ -63,6 +63,7 @@
   font-family: Roboto, Arial, sans-serif;
   font-size: 26px;
   text-align: left;
+  line-height: 0.5;
 }
 .logo {
   margin-left: 20px;

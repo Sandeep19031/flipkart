@@ -1,24 +1,9 @@
 import React from "react";
 import "./mobilesCard.css";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-let data = {
-  title: "Redmi 9 (Sporty Orange, 64 GB)  (4 GB RAM)",
-  link: "https://www.linkpicture.com/q/Redmi-9-Sporty-Orange-64GB.jpeg",
-  original_price: 10760,
-  updated_price: 10090,
-  discount: 6,
-  highlights: [
-    "4 GB RAM | 64 GB ROM",
-    "16.59 cm (6.53 inch) HD+ Display",
-    "13MP + 2MP | 5MP Front Camera",
-    "5000 mAh Battery",
-    "MediaTek Helio G35 Processor",
-  ],
-  warranty:
-    "1 year manufacturer warranty for device and 6 months manufacturer warranty for in-box accessories including batteries from the date of purchase",
-};
-
-function MobileCard() {
+function MobileCard({ data }) {
   return (
     <div className="mobileCard">
       <div className="card-image">
@@ -67,6 +52,25 @@ function MobileCard() {
   );
 }
 
-MobileCard();
+function MobileCards(params = { param: {} }) {
+  // console.log(params);
+  const [DataList, setDataList] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:9000/mobiles", {
+        params: params.param,
+      })
+      .then((res) => {
+        setDataList(res.data);
+      });
+  }, [params]);
+  return (
+    <div>
+      {DataList.map((data) => (
+        <MobileCard data={data} />
+      ))}
+    </div>
+  );
+}
 
-export default MobileCard;
+export default MobileCards;

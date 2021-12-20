@@ -1,117 +1,138 @@
 import React from "react";
 import "./AllProducts.css";
-import MobileCard from "../cardsTemplates/mobilesCard";
+import MobileCards from "../cardsTemplates/mobilesCard";
+import { RangeStepInput } from "react-range-step-input";
+import { useEffect, useState } from "react";
 
 function AllProducts() {
+  const [PriceValue, setPriceValue] = useState(0);
+  const [IsChecked, setIsChecked] = useState(new Array(7).fill(false));
+
+  const handleOnChange = (position) => {
+    const updatedCheckedState = IsChecked.map((item, index) =>
+      index === position ? !item : item
+    );
+    setIsChecked(updatedCheckedState);
+    console.log(updatedCheckedState);
+  };
+
   return (
-    <MobileCard />
-    // <div className="allProducts">
-    //   <div className="filters-conatiner">
-    //     <div className="filters">
-    //       <p style={{ fontWeight: "500", fontSize: "1.5em" }}>Filters</p>
-    //     </div>
-    //     <div className="price">
-    //       <p>PRICE</p>
-    //       <div className="price-slider"></div>
-    //       <div className="price-range"></div>
-    //     </div>
-    //     <div className="brand">
-    //       <p>BRAND</p>
-    //       <label class="container">
-    //         Samsung
-    //         <input type="checkbox" />
-    //         <span class="checkmark"></span>
-    //       </label>
+    <div className="allProducts">
+      <div className="filters-container">
+        <div className="filters">
+          <p>Filters</p>
+        </div>
+        <div className="price">
+          <p className="price-heading">PRICE</p>
+          <div className="price-slider">
+            <RangeStepInput
+              min={0}
+              max={30000}
+              value={PriceValue}
+              step={2000}
+              onChange={(e) => {
+                const newVal = e.target.value;
+                setPriceValue(newVal);
+                console.log(newVal);
+              }}
+            />
+            <span className="price-value">{PriceValue}</span>
+          </div>
+        </div>
+        <div className="brand">
+          <p className="brand-heading">BRAND</p>
+          <label className="container">
+            <input
+              className="checkbox"
+              type="checkbox"
+              checked={IsChecked[0]}
+              onChange={() => handleOnChange(0)}
+            />
+            Mi
+          </label>
+          <br />
 
-    //       <label class="container">
-    //         Realme
-    //         <input type="checkbox" />
-    //         <span class="checkmark"></span>
-    //       </label>
-    //     </div>
-    //     <div class="rating">
-    //       <p>CUSTOMER RATING</p>
-    //       <label class="container">
-    //         4★ & above
-    //         <input type="checkbox" />
-    //         <span class="checkmark"></span>
-    //       </label>
+          <label className="container">
+            <input
+              className="checkbox"
+              type="checkbox"
+              checked={IsChecked[1]}
+              onChange={() => handleOnChange(1)}
+            />
+            Realme
+          </label>
+        </div>
+        <div className="rating">
+          <p className="rating-heading">CUSTOMER RATING</p>
+          <label className="container">
+            <input
+              type="checkbox"
+              checked={IsChecked[2]}
+              onChange={() => handleOnChange(2)}
+            />
+            4★ & above
+            <span className="checkmark"></span>
+          </label>
+          <br></br>
 
-    //       <label class="container">
-    //         3★ & above
-    //         <input type="checkbox" />
-    //         <span class="checkmark"></span>
-    //       </label>
-    //     </div>
-    //     <div class="discount">
-    //       <p>DISCOUNT</p>
-    //       <label class="container">
-    //         10% or more
-    //         <input type="checkbox" />
-    //         <span class="checkmark"></span>
-    //       </label>
+          <label className="container">
+            <input
+              type="checkbox"
+              checked={IsChecked[3]}
+              onChange={() => handleOnChange(3)}
+            />
+            3★ & above
+            <span className="checkmark"></span>
+          </label>
+          <br></br>
 
-    //       <label class="container">
-    //         10% or more
-    //         <input type="checkbox" />
-    //         <span class="checkmark"></span>
-    //       </label>
-    //     </div>
-    //   </div>
-    //   <div className="results">
-    //     <div className="result-container">
-    //       <div className="result-container-top">
-    //         <p>Home{">"}Mobiles</p>
-    //       </div>
-    //       <div className="result-container-down">
-    //         <p>Showing 10 results for mobiles</p>
-    //       </div>
-    //     </div>
-    //     <MobileCard />
-    //     {/* <div className="result-card">
-    //       <div className="result-card-left">
-    //         <img
-    //           src="https://rukminim1.flixcart.com/image/312/312/ksnjp8w0/mobile/h/u/u/c21y-rmx3261-realme-original-imag65kcafgjqknz.jpeg?q=70"
-    //           alt="realme"
-    //         />
-    //       </div>
-    //       <div className="result-card-mid">
-    //         <div className="result-card-mid-up">
-    //           <p>realme C21Y (Cross Black, 32 GB) </p>
-    //           <div className="rate-block">
-    //             <p>
-    //               <span className="rate-star">4.5★</span>23,232 Rating & 734
-    //               Reviews
-    //             </p>
-    //           </div>
-    //         </div>
-    //         <div className="result-card-mid-down">
-    //           <ul>
-    //             <li>3 GB RAM | 32 GB ROM | Expandable Upto 256 GB </li>
-    //             <li>16.51 cm (6.5 inch) HD+ Display</li>
-    //             <li>13MP + 2MP + 2MP | 5MP Front Camera</li>
-    //             <li>5000 mAh Battery</li>
-    //             <li>Unisoc T610 Processor</li>
-    //           </ul>
-    //         </div>
-    //       </div>
-    //       <div className="result-card-right">
-    //         <div className="result-card-right-box">
-    //           <p>₹8,999</p>
-    //           <img
-    //             src="https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png"
-    //             alt="fAssured"
-    //           />
-    //         </div>
+          <label className="container">
+            <input
+              type="checkbox"
+              checked={IsChecked[4]}
+              onChange={() => handleOnChange(4)}
+            />
+            2★ & above
+            <span className="checkmark"></span>
+          </label>
+        </div>
+        <div className="discount">
+          <p className="discount-heading">DISCOUNT</p>
+          <label className="container">
+            <input
+              type="checkbox"
+              checked={IsChecked[5]}
+              onChange={() => handleOnChange(5)}
+            />
+            10% or more
+            <span className="checkmark"></span>
+          </label>
+          <br></br>
 
-    //         <div className="">
-    //           <p>₹9,99</p>
-    //           <p>10% off</p>
-    //         </div>
-    //       </div>
-    //     </div> */}
-    //   </div>
-    // </div>
+          <label className="container">
+            <input
+              type="checkbox"
+              checked={IsChecked[6]}
+              onChange={() => handleOnChange(6)}
+            />
+            5% or more
+            <span className="checkmark"></span>
+          </label>
+        </div>
+      </div>
+      <div className="results">
+        <div className="result-container">
+          <p className="result-container-path">Home &#x2192; Mobiles</p>
+          <p className="result-container-no-of-results">
+            <span className="Mobile-brand">Mi Mobiles</span>(Showing 10 results
+            for mobiles)
+          </p>
+        </div>
+        <div>
+          <MobileCards param={{ updated_price: PriceValue }} />
+        </div>
+      </div>
+    </div>
   );
 }
 
