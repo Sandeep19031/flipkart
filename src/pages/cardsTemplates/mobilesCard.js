@@ -54,7 +54,7 @@ function MobileCard() {
             />
           </span>
         </p>
-        <p className="discount">
+        <p className="discount1">
           <span>
             <del className="original_price">
               &#x20b9;{data.original_price.toLocaleString()}
