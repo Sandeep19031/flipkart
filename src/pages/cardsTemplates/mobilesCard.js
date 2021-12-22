@@ -13,7 +13,8 @@ function MobileCard({ data }) {
         <p className="card-title">{data.title}</p>
         <div className="rate-block">
           <p>
-            <span className="rate-star">4.5★</span>23,232 Rating & 734 Reviews
+            <span className="rate-star">{data.rating}★</span>23,232 Rating & 734
+            Reviews
           </p>
         </div>
         <div>
@@ -30,7 +31,10 @@ function MobileCard({ data }) {
       <div className="card-price">
         <p>
           &#x20b9;
-          {data.updated_price.toLocaleString()}
+          {(
+            data.original_price -
+            (data.discount * data.original_price) / 100
+          ).toFixed(0)}
           <span>
             <img
               className="logo"
