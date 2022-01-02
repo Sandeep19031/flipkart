@@ -1,12 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './NavCard.css'
 
 const Card = ({src,type}) => {
     return (
-        <div className="Card">
+        <Link to={`allProducts/${type}`} style={{textDecoration: 'none', color: 'black'}}> 
+        <div className="Card" >
             <img src={src} className ="card-img" alt="mobile" />
             <p>{type}</p>
         </div>
+        </Link>
     );
 }
 function NavCard() {

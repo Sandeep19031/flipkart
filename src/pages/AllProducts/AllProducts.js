@@ -3,6 +3,7 @@ import "./AllProducts.css";
 import MobileCards from "../cardsTemplates/mobilesCard";
 import { RangeStepInput } from "react-range-step-input";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 function AllProducts() {
   const [PriceValue, setPriceValue] = useState(0);
@@ -10,6 +11,8 @@ function AllProducts() {
   const [RatingFilter, SetRatingFilter] = useState(0);
   const [DiscountFilter, SetDiscountFilter] = useState(0);
   const [Brands, setBrands] = useState([]);
+  const params = useParams();
+  const productType = params.productType;
   useEffect(() => {
     const filterBrand = [];
     if (IsChecked[0]) {
@@ -83,7 +86,7 @@ function AllProducts() {
               type="radio"
               name="rating"
               value={4}
-              checked={RatingFilter == 4}
+              checked={RatingFilter === 4}
               onChange={(event) => SetRatingFilter(event.target.value)}
             />
             4★ & above
@@ -95,7 +98,7 @@ function AllProducts() {
               type="radio"
               name="rating"
               value={3}
-              checked={RatingFilter == 3}
+              checked={RatingFilter === 3}
               onChange={(event) => SetRatingFilter(event.target.value)}
             />
             3★ & above
@@ -107,7 +110,7 @@ function AllProducts() {
               type="radio"
               name="rating"
               value={2}
-              checked={RatingFilter == 2}
+              checked={RatingFilter === 2}
               onChange={(event) => SetRatingFilter(event.target.value)}
             />
             2★ & above
@@ -118,7 +121,7 @@ function AllProducts() {
               type="radio"
               name="rating"
               value={0}
-              checked={RatingFilter == 0}
+              checked={RatingFilter === 0}
               onChange={(event) => SetRatingFilter(event.target.value)}
             />
             None
@@ -131,7 +134,7 @@ function AllProducts() {
               type="radio"
               name="discount"
               value={10}
-              checked={DiscountFilter == 10}
+              checked={DiscountFilter === 10}
               onChange={(event) => SetDiscountFilter(event.target.value)}
             />
             10% or more
@@ -143,7 +146,7 @@ function AllProducts() {
               type="radio"
               name="discount"
               value={5}
-              checked={DiscountFilter == 5}
+              checked={DiscountFilter === 5}
               onChange={(event) => SetDiscountFilter(event.target.value)}
             />
             5% or more
@@ -154,7 +157,7 @@ function AllProducts() {
               type="radio"
               name="discount"
               value={0}
-              checked={DiscountFilter == 0}
+              checked={DiscountFilter === 0}
               onChange={(event) => SetDiscountFilter(event.target.value)}
             />
             None
@@ -170,6 +173,7 @@ function AllProducts() {
           </p>
         </div>
         <div>
+          {productType==="Mobiles" &&
           <MobileCards
             param={{
               updated_price: PriceValue,
@@ -178,6 +182,7 @@ function AllProducts() {
               brand: Brands,
             }}
           />
+          }          
         </div>
       </div>
     </div>
