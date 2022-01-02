@@ -6,7 +6,21 @@ import { useEffect, useState } from "react";
 
 function AllProducts() {
   const [PriceValue, setPriceValue] = useState(0);
-  const [IsChecked, setIsChecked] = useState(new Array(7).fill(false));
+  const [IsChecked, setIsChecked] = useState(new Array(2).fill(false));
+  const [RatingFilter, SetRatingFilter] = useState(0);
+  const [DiscountFilter, SetDiscountFilter] = useState(0);
+  const [Brands, setBrands] = useState([]);
+  useEffect(() => {
+    const filterBrand = [];
+    if (IsChecked[0]) {
+      filterBrand.push("Mi");
+    }
+    if (IsChecked[1]) {
+      filterBrand.push("Realme");
+    }
+    setBrands(filterBrand);
+    console.log(filterBrand);
+  }, [IsChecked]);
 
   const handleOnChange = (position) => {
     const updatedCheckedState = IsChecked.map((item, index) =>
@@ -66,57 +80,84 @@ function AllProducts() {
           <p className="rating-heading">CUSTOMER RATING</p>
           <label className="container">
             <input
-              type="checkbox"
-              checked={IsChecked[2]}
-              onChange={() => handleOnChange(2)}
+              type="radio"
+              name="rating"
+              value={4}
+              checked={RatingFilter == 4}
+              onChange={(event) => SetRatingFilter(event.target.value)}
             />
             4★ & above
-            <span className="checkmark"></span>
           </label>
-          <br></br>
+          <br />
 
           <label className="container">
             <input
-              type="checkbox"
-              checked={IsChecked[3]}
-              onChange={() => handleOnChange(3)}
+              type="radio"
+              name="rating"
+              value={3}
+              checked={RatingFilter == 3}
+              onChange={(event) => SetRatingFilter(event.target.value)}
             />
             3★ & above
-            <span className="checkmark"></span>
           </label>
-          <br></br>
+          <br />
 
           <label className="container">
             <input
-              type="checkbox"
-              checked={IsChecked[4]}
-              onChange={() => handleOnChange(4)}
+              type="radio"
+              name="rating"
+              value={2}
+              checked={RatingFilter == 2}
+              onChange={(event) => SetRatingFilter(event.target.value)}
             />
             2★ & above
-            <span className="checkmark"></span>
+          </label>
+          <br />
+          <label className="container">
+            <input
+              type="radio"
+              name="rating"
+              value={0}
+              checked={RatingFilter == 0}
+              onChange={(event) => SetRatingFilter(event.target.value)}
+            />
+            None
           </label>
         </div>
         <div className="discount">
           <p className="discount-heading">DISCOUNT</p>
           <label className="container">
             <input
-              type="checkbox"
-              checked={IsChecked[5]}
-              onChange={() => handleOnChange(5)}
+              type="radio"
+              name="discount"
+              value={10}
+              checked={DiscountFilter == 10}
+              onChange={(event) => SetDiscountFilter(event.target.value)}
             />
             10% or more
-            <span className="checkmark"></span>
           </label>
-          <br></br>
+          <br />
 
           <label className="container">
             <input
-              type="checkbox"
-              checked={IsChecked[6]}
-              onChange={() => handleOnChange(6)}
+              type="radio"
+              name="discount"
+              value={5}
+              checked={DiscountFilter == 5}
+              onChange={(event) => SetDiscountFilter(event.target.value)}
             />
             5% or more
-            <span className="checkmark"></span>
+          </label>
+          <br />
+          <label className="container">
+            <input
+              type="radio"
+              name="discount"
+              value={0}
+              checked={DiscountFilter == 0}
+              onChange={(event) => SetDiscountFilter(event.target.value)}
+            />
+            None
           </label>
         </div>
       </div>
@@ -129,7 +170,14 @@ function AllProducts() {
           </p>
         </div>
         <div>
-          <MobileCards param={{ updated_price: PriceValue }} />
+          <MobileCards
+            param={{
+              updated_price: PriceValue,
+              rating: RatingFilter,
+              discount: DiscountFilter,
+              brand: Brands,
+            }}
+          />
         </div>
       </div>
     </div>
