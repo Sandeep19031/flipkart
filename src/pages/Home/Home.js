@@ -1,11 +1,8 @@
 import React from "react";
-import Bottom from "../Bottom/Bottom";
-import Navbar from "../Navbar/Navbar";
-import NavCard from "../NavCard/NavCard";
 import "./Home.css";
 
 import CartLogo1 from "./cart-logo.png";
-import AllProducts from "../AllProducts/AllProducts";
+import { Link } from "react-router-dom";
 
 const HomeProductCard = ({
   productName,
@@ -30,13 +27,15 @@ const HomeProductCard = ({
     </div>
   );
 };
-const ProductsCard = ({ title, list }) => {
+const ProductsCard = ({ title, list, type }) => {
   return (
     <div className="productsCard">
       <div className="productsCard-left">
         <div className="productsCard-left-up">
           <p>{title}</p>
+          <Link to={`/allProducts/${type}`} style={{textDecoration: 'none'}}>
           <div className="button">VIEW ALL</div>
+          </Link>
         </div>
 
         <div className="productsCard-left-down">
@@ -93,21 +92,18 @@ function Home() {
   ];
   return (
     <div>
-      <Navbar />
-      <NavCard />
       <div className="body">
-        {/* <ProductsCard 
-                title="Top Offers on Mobiles"
-                list={HomeProductCard_Mobiles}
-                />
-                <ProductsCard 
-                title="Today's Fashion Deals"
-                list={HomeProductCard_Fashions}
-                /> */}
-        <AllProducts />
+        <ProductsCard 
+          title="Top Offers on Mobiles"
+          list={HomeProductCard_Mobiles}
+          type="Mobiles"
+          />
+        <ProductsCard 
+          title="Today's Fashion Deals"
+          list={HomeProductCard_Fashions}
+          type="Fashion"
+        />
       </div>
-
-      <Bottom />
     </div>
   );
 }

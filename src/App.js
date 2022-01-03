@@ -3,6 +3,11 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/login/login";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import AllProducts from "./pages/AllProducts/AllProducts";
+import Bottom from "./pages/Bottom/Bottom";
+import NavCard from "./pages/NavCard/NavCard";
+import Navbar from "./pages/Navbar/Navbar";
 
 function App() {
   let [Data, setData] = useState([]);
@@ -31,6 +36,7 @@ function App() {
 
   return (
     <div className="App">
+      {/*
       {Data.length !== 0 ? (
         <Home />
       ) : (
@@ -40,6 +46,20 @@ function App() {
           setIsLogin={setIsLogin}
         />
       )}
+      */}
+      <Navbar />
+      <NavCard />
+
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route
+          exact
+          path="/allProducts/:productType"
+          element={<AllProducts />}
+        />
+      </Routes>
+
+      <Bottom />
     </div>
   );
 }

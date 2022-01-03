@@ -3,6 +3,7 @@ import './Navbar.css'
 
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { Link } from 'react-router-dom';
 
 const Account = () => {
     return (
@@ -41,9 +42,13 @@ function Navbar() {
     const login = true;
     return (
         <div className="navbar">
-            <div className="navbar-left">
-                <img src="https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fk-plus_3b0baa.png" alt="Flipkart" width="60%"/>
-            </div>
+            
+                <div className="navbar-left" id="icon">
+                    <Link to="/" style={{textDecoration: 'none'}}>
+                      <img src="https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fk-plus_3b0baa.png" alt="Flipkart" width="60%"/>
+                    </Link>
+                </div>
+            
             <div className="navbar-mid">
                 <div className="searchDiv">
                     <input type="text" placeholder="Search for products, brands and more" />
