@@ -4,12 +4,12 @@
   width: 100%;
   background-color: rgb(248, 247, 247);
 }
-.filters-container {
+.allp-filters-container {
   margin: 10px 5px 10px 10px;
   /* flex: 0.2; */
   width: 20%;
 }
-.filters {
+.allp-filters {
   font-family: Roboto, Arial, sans-serif;
   font-size: 24px;
   font-weight: 500;
@@ -20,7 +20,7 @@
   border: 1px solid rgb(223, 219, 219);
   line-height: 1.5;
 }
-.price {
+.allp-price {
   font-family: Roboto, Arial, sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -30,19 +30,19 @@
   background-color: white;
   border: 1px solid rgb(223, 219, 219);
 }
-.price-heading {
+.allp-price-heading {
   font-weight: 550;
   font-size: 18px;
 }
-.price-slider {
+.allp-price-slider {
   padding-bottom: 10px;
 }
-.price-value {
+.allp-price-value {
   border: 1px solid black;
   background-color: rgb(192, 188, 188);
   padding: 8px 15px;
 }
-.brand {
+.allp-brand {
   font-family: Roboto, Arial, sans-serif;
   padding-left: 25px;
   padding-bottom: 15px;
@@ -50,20 +50,20 @@
   background-color: white;
   border: 1px solid rgb(223, 219, 219);
 }
-.brand-heading {
+.allp-brand-heading {
   font-weight: 550;
   font-size: 18px;
 }
-.container {
+.allp-container {
   font-weight: 500;
   font-size: 18px;
 }
 
-.checkbox {
+.allp-checkbox {
   font-weight: 500;
   font-size: 18px;
 }
-.rating {
+.allp-rating {
   font-family: Roboto, Arial, sans-serif;
   padding-left: 25px;
   padding-bottom: 15px;
@@ -71,11 +71,11 @@
   background-color: white;
   border: 1px solid rgb(223, 219, 219);
 }
-.rating-heading {
+.allp-rating-heading {
   font-weight: 550;
   font-size: 18px;
 }
-.discount {
+.allp-discount {
   font-family: Roboto, Arial, sans-serif;
   padding-left: 25px;
   padding-bottom: 15px;
@@ -83,36 +83,36 @@
   background-color: white;
   border: 1px solid rgb(223, 219, 219);
 }
-.discount-heading {
+.allp-discount-heading {
   font-weight: 550;
   font-size: 18px;
 }
-.results {
+.allp-results {
   /* flex: 0.7; */
   width: 70%;
 }
-.result-card-right-box > img {
+.allp-result-card-right-box > img {
   width: 100px;
   height: 100px;
   object-fit: contain;
 }
 
-.result-card {
+.allp-result-card {
   display: flex;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.result-card-right-box {
+.allp-result-card-right-box {
   display: flex;
 }
 
-.result-container {
+.allp-result-container {
   width: 100%;
   margin: 10px 10px 10px 5px;
   background-color: white;
   border: 1px solid rgb(223, 219, 219);
 }
-.result-container-path {
+.allp-result-container-path {
   font-family: Roboto, Arial, sans-serif;
   font-size: 18px;
   font-weight: 550;
@@ -120,14 +120,14 @@
   text-align: left;
   padding: 8px 0px 4px 25px;
 }
-.Mobile-brand {
+.allp-Mobile-brand {
   font-family: Roboto, Arial, sans-serif;
   font-size: 24px;
   font-weight: 600;
   text-align: left;
   margin-right: 10px;
 }
-.result-container-no-of-results {
+.allp-result-container-no-of-results {
   font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
   font-weight: 500;

@@ -12,6 +12,7 @@ function Login(params) {
       <div className="rightPage">
         <div className="form_group">
           <input
+            className="login-signIn"
             type="text"
             placeholder=" "
             onChange={(event) => {
@@ -22,6 +23,7 @@ function Login(params) {
         </div>
         <div className="form_group">
           <input
+            className="login-signIn"
             type="text"
             placeholder=" "
             onChange={(event) => {

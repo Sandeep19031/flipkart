@@ -35,13 +35,13 @@ function AllProducts() {
 
   return (
     <div className="allProducts">
-      <div className="filters-container">
-        <div className="filters">
+      <div className="allp-filters-container">
+        <div className="allp-filters">
           <p>Filters</p>
         </div>
-        <div className="price">
-          <p className="price-heading">PRICE</p>
-          <div className="price-slider">
+        <div className="allp-price">
+          <p className="allp-price-heading">PRICE</p>
+          <div className="allp-price-slider">
             <RangeStepInput
               min={0}
               max={30000}
@@ -53,14 +53,14 @@ function AllProducts() {
                 console.log(newVal);
               }}
             />
-            <span className="price-value">{PriceValue}</span>
+            <span className="allp-price-value">{PriceValue}</span>
           </div>
         </div>
-        <div className="brand">
-          <p className="brand-heading">BRAND</p>
-          <label className="container">
+        <div className="allp-brand">
+          <p className="allp-brand-heading">BRAND</p>
+          <label className="allp-container">
             <input
-              className="checkbox"
+              className="allp-checkbox"
               type="checkbox"
               checked={IsChecked[0]}
               onChange={() => handleOnChange(0)}
@@ -69,9 +69,9 @@ function AllProducts() {
           </label>
           <br />
 
-          <label className="container">
+          <label className="allp-container">
             <input
-              className="checkbox"
+              className="allp-checkbox"
               type="checkbox"
               checked={IsChecked[1]}
               onChange={() => handleOnChange(1)}
@@ -79,110 +79,110 @@ function AllProducts() {
             Realme
           </label>
         </div>
-        <div className="rating">
-          <p className="rating-heading">CUSTOMER RATING</p>
-          <label className="container">
+        <div className="allp-rating">
+          <p className="allp-rating-heading">CUSTOMER RATING</p>
+          <label className="allp-container">
             <input
               type="radio"
-              name="rating"
+              className="allp-rating"
               value={4}
-              checked={RatingFilter === 4}
+              checked={Number(RatingFilter) === 4}
               onChange={(event) => SetRatingFilter(event.target.value)}
             />
             4★ & above
           </label>
           <br />
 
-          <label className="container">
+          <label className="allp-container">
             <input
               type="radio"
-              name="rating"
+              className="allp-rating"
               value={3}
-              checked={RatingFilter === 3}
+              checked={Number(RatingFilter) === 3}
               onChange={(event) => SetRatingFilter(event.target.value)}
             />
             3★ & above
           </label>
           <br />
 
-          <label className="container">
+          <label className="allp-container">
             <input
               type="radio"
-              name="rating"
+              className="allp-rating"
               value={2}
-              checked={RatingFilter === 2}
+              checked={Number(RatingFilter) === 2}
               onChange={(event) => SetRatingFilter(event.target.value)}
             />
             2★ & above
           </label>
           <br />
-          <label className="container">
+          <label className="allp-container">
             <input
               type="radio"
-              name="rating"
+              className="allp-rating"
               value={0}
-              checked={RatingFilter === 0}
+              checked={Number(RatingFilter) === 0}
               onChange={(event) => SetRatingFilter(event.target.value)}
             />
             None
           </label>
         </div>
-        <div className="discount">
-          <p className="discount-heading">DISCOUNT</p>
-          <label className="container">
+        <div className="allp-discount">
+          <p className="allp-discount-heading">DISCOUNT</p>
+          <label className="allp-container">
             <input
               type="radio"
-              name="discount"
+              className="allp-discount"
               value={10}
-              checked={DiscountFilter === 10}
+              checked={Number(DiscountFilter) === 10}
               onChange={(event) => SetDiscountFilter(event.target.value)}
             />
             10% or more
           </label>
           <br />
 
-          <label className="container">
+          <label className="allp-container">
             <input
               type="radio"
-              name="discount"
+              className="allp-discount"
               value={5}
-              checked={DiscountFilter === 5}
+              checked={Number(DiscountFilter) === 5}
               onChange={(event) => SetDiscountFilter(event.target.value)}
             />
             5% or more
           </label>
           <br />
-          <label className="container">
+          <label className="allp-container">
             <input
               type="radio"
-              name="discount"
+              className="allp-discount"
               value={0}
-              checked={DiscountFilter === 0}
+              checked={Number(DiscountFilter) === 0}
               onChange={(event) => SetDiscountFilter(event.target.value)}
             />
             None
           </label>
         </div>
       </div>
-      <div className="results">
-        <div className="result-container">
-          <p className="result-container-path">Home &#x2192; Mobiles</p>
-          <p className="result-container-no-of-results">
-            <span className="Mobile-brand">Mi Mobiles</span>(Showing 10 results
-            for mobiles)
+      <div className="allp-results">
+        <div className="allp-result-container">
+          <p className="allp-result-container-path">Home &#x2192; Mobiles</p>
+          <p className="allp-result-container-no-of-results">
+            <span className="allp-Mobile-brand">Mi Mobiles</span>(Showing 10
+            results for mobiles)
           </p>
         </div>
         <div>
-          {productType==="Mobiles" &&
-          <MobileCards
-            param={{
-              updated_price: PriceValue,
-              rating: RatingFilter,
-              discount: DiscountFilter,
-              brand: Brands,
-            }}
-          />
-          }          
+          {productType === "Mobiles" && (
+            <MobileCards
+              param={{
+                updated_price: PriceValue,
+                rating: RatingFilter,
+                discount: DiscountFilter,
+                brand: Brands,
+              }}
+            />
+          )}
         </div>
       </div>
     </div>

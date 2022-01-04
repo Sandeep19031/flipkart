@@ -36,8 +36,9 @@ function App() {
 
   return (
     <div className="App">
-      {/*
-      {Data.length !== 0 ? (
+      <Navbar />
+      <NavCard />
+      {/* {Data.length !== 0 ? (
         <Home />
       ) : (
         <Login
@@ -45,10 +46,7 @@ function App() {
           setEmail={setEmail}
           setIsLogin={setIsLogin}
         />
-      )}
-      */}
-      <Navbar />
-      <NavCard />
+      )} */}
 
       <Routes>
         <Route exact path="/" element={<Home />} />
