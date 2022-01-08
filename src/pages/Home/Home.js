@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
 
 import CartLogo1 from "./cart-logo.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const HomeProductCard = ({
   productName,
@@ -33,8 +33,8 @@ const ProductsCard = ({ title, list, type }) => {
       <div className="productsCard-left">
         <div className="productsCard-left-up">
           <p>{title}</p>
-          <Link to={`/allProducts/${type}`} style={{textDecoration: 'none'}}>
-          <div className="button">VIEW ALL</div>
+          <Link to={`/allProducts/${type}`} style={{ textDecoration: "none" }}>
+            <div className="button">VIEW ALL</div>
           </Link>
         </div>
 
@@ -58,6 +58,14 @@ const ProductsCard = ({ title, list, type }) => {
   );
 };
 function Home() {
+  const routePath = useLocation();
+  const onTop = () => {
+    // alert("done!!");
+    window.scrollTo(0, 0);
+  };
+  useEffect(() => {
+    onTop();
+  }, [routePath]);
   const HomeProductCard_Mobiles = [
     {
       productName: "SAMSUNG Galaxy Z Flip3 5G",
@@ -93,12 +101,12 @@ function Home() {
   return (
     <div>
       <div className="body">
-        <ProductsCard 
+        <ProductsCard
           title="Top Offers on Mobiles"
           list={HomeProductCard_Mobiles}
           type="Mobiles"
-          />
-        <ProductsCard 
+        />
+        <ProductsCard
           title="Today's Fashion Deals"
           list={HomeProductCard_Fashions}
           type="Fashion"

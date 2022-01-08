@@ -19,6 +19,7 @@
   background-color: white;
   border: 1px solid rgb(223, 219, 219);
   line-height: 1.5;
+  margin-bottom: 10px;
 }
 .allp-price {
   font-family: Roboto, Arial, sans-serif;
@@ -29,6 +30,7 @@
   padding-left: 25px;
   background-color: white;
   border: 1px solid rgb(223, 219, 219);
+  margin-bottom: 10px;
 }
 .allp-price-heading {
   font-weight: 550;
@@ -49,6 +51,7 @@
   text-align: left;
   background-color: white;
   border: 1px solid rgb(223, 219, 219);
+  margin-bottom: 10px;
 }
 .allp-brand-heading {
   font-weight: 550;
@@ -70,6 +73,7 @@
   text-align: left;
   background-color: white;
   border: 1px solid rgb(223, 219, 219);
+  margin-bottom: 10px;
 }
 .allp-rating-heading {
   font-weight: 550;

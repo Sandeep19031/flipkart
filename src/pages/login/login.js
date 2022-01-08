@@ -4,8 +4,8 @@ import { useState } from "react";
 
 function Login(params) {
   console.log(params);
-  let [Email, setEmail] = useState("");
-  let [Password, setPassword] = useState("");
+  let [email, setEmail] = useState("");
+  let [password, setPassword] = useState("");
   return (
     <div className="loginPage">
       <div className="leftPage"></div>
@@ -36,8 +36,8 @@ function Login(params) {
           <button
             className="btn"
             onClick={() => {
-              params.setEmail(Email);
-              params.setPassword(Password);
+              params.setEmail(email);
+              params.setPassword(password);
               params.setIsLogin(true);
             }}
           >
@@ -46,8 +46,8 @@ function Login(params) {
           <button
             className="btn"
             onClick={() => {
-              params.setEmail(Email);
-              params.setPassword(Password);
+              params.setEmail(email);
+              params.setPassword(password);
               params.setIsLogin(false);
             }}
           >

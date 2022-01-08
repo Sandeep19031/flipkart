@@ -1,0 +1,71 @@
+.MyCart {
+  min-height: 80vh;
+}
+.productCard-Block {
+  display: flex;
+  flex: 1;
+  padding: 10px;
+  width: 80%;
+  margin: 15px auto;
+  background-color: white;
+  /* border: 1px solid rgb(223, 219, 219);
+  box-shadow: 1px 1px 1px 1px #888888; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.productCard-leftBlock {
+  flex: 0.2;
+}
+.productCard-rightBlock {
+  flex: 0.7;
+  text-align: start;
+  padding: 0px 30px 0px 30px;
+}
+.productCart-brand {
+  font-size: 22px;
+  color: rgb(156, 156, 156);
+  font-weight: 500;
+  margin: 0px;
+  margin-top: 20px;
+}
+.productCart-title {
+  font-size: 22px;
+  margin: 0px;
+  font-weight: 500;
+  padding-bottom: 16px;
+}
+.productCart-discount {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 20px;
+  color: rgb(94, 190, 106);
+}
+.productCart-price {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 32px;
+  color: black;
+  margin-right: 16px;
+}
+.productCart-originalPrice {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 20px;
+  color: rgb(128, 126, 126);
+  margin-right: 15px;
+}
+.productCartBtn {
+  padding: 4px 10px;
+  border-style: 0px solid;
+  border-radius: 6px;
+  background-color: #f51a1a;
+  color: white;
+  font-size: 18px;
+  margin-right: 10px;
+  font-family: Roboto, Arial, sans-serif;
+}
+.productCartBtn:hover {
+  background-color: #f33b3b;
+}
+.productCartBtn:active {
+  background-color: #c20000;
+}
+.totalBill {
+  margin: 0 auto;
+}
