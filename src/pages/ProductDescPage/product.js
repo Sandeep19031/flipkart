@@ -30,6 +30,9 @@ function Product({ functions }) {
           <div className="product-btnContainer">
             <button
               onClick={() => {
+                if (userData.ProductCart === undefined) {
+                  userData.ProductCart = [];
+                }
                 if (userData.ProductCart.includes(data._id)) {
                   alert("Product is already in the cart!!");
                   return;

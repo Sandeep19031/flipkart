@@ -6,10 +6,22 @@ function Login(params) {
   console.log(params);
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
+  let [username, setUsername] = useState("");
   return (
     <div className="loginPage">
       <div className="leftPage"></div>
       <div className="rightPage">
+        <div className="form_group">
+          <input
+            className="login-signIn"
+            type="text"
+            placeholder=" "
+            onChange={(event) => {
+              setUsername(event.target.value);
+            }}
+          />
+          <span className="placeholder">Username</span>
+        </div>
         <div className="form_group">
           <input
             className="login-signIn"
@@ -46,6 +58,7 @@ function Login(params) {
           <button
             className="btn"
             onClick={() => {
+              params.setUsername(username);
               params.setEmail(email);
               params.setPassword(password);
               params.setIsLogin(false);

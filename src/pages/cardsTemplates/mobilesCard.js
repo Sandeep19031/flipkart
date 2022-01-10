@@ -8,7 +8,7 @@ function MobileCard({ data }) {
   return (
     <div className="mobileCard">
       <div className="card-image">
-        <img src={data.imageLinks[0]} alt="blank" width={"75%"} />
+        <img src={data.imageLinks[0]} alt="blank" height={250} />
       </div>
       <div className="card-desc">
         <p className="card-title">{data.title}</p>
