@@ -1,32 +1,59 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./product.css";
 // import { useParams } from "react-router-dom";
 import { useLocation } from "react-router";
 function Product({ functions }) {
-  const routePath = useLocation();
+  const location = useLocation();
   const onTop = () => {
     // alert("done!!");
     window.scrollTo(0, 0);
   };
   useEffect(() => {
     onTop();
-  }, [routePath]);
+  }, [location]);
   // const params = useParams();
-  const location = useLocation();
   const data = location.state;
+  // let listOfImages = [0, 1, 2, 3, 4, 5, 6, 7, 8, 0];
   // const productType = params.productType;
   // const productName = params.productName;
   const [userData, setUserData] = functions;
+  let [mainImage, setMainImage] = useState(`url(${data.imageLinks[0]})`);
+  // console.log(document.getElementsByClassName("product-allImages"));
+  useEffect(() => {
+    console.log("changedImage!!", mainImage);
+  }, [mainImage]);
   return (
     <div className="product">
       <div className="product-leftBlock">
         <div>
-          <div
-            className="product-images"
-            style={{
-              backgroundImage: `url(${data.imageLinks[0]})`,
-            }}
-          ></div>
+          <div className="product-images">
+            <div
+              className="product-allImages"
+              // id="allImages"
+              // style={{
+              //   height: document.getElementById("allImages").offsetWidth,
+              // }}
+            >
+              {data.imageLinks.map((link) => (
+                <div
+                  className="product-imageBox"
+                  style={{
+                    backgroundImage: `url(${link})`,
+                  }}
+                  onMouseOver={(event) => {
+                    console.log(event.target.style.backgroundImage);
+                    setMainImage(event.target.style.backgroundImage);
+                  }}
+                ></div>
+              ))}
+            </div>
+            <div
+              className="product-currImage"
+              style={{
+                backgroundImage: mainImage,
+              }}
+            ></div>
+          </div>
           <div className="product-btnContainer">
             <button
               onClick={() => {

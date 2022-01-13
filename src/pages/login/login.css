@@ -10,9 +10,12 @@
 .leftPage {
   display: flex;
   flex-direction: column;
-  flex: 0.4;
-  background-color: aqua;
+  flex: 0.2;
+  /* background-color: aqua; */
   height: 80vh;
+  background-image: url("https://www.linkpicture.com/q/Orange-Illustrated-and-Traditional-Maximalist-Maha-Navmi-Sale-Your-Story.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .rightPage {
   display: flex;
